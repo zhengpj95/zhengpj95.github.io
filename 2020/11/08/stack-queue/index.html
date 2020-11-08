@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>stack&amp;queue | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="栈与队列都是操作受限的线性表。 何为线性表呢？线性表是具有相同数据类型的 n(n&gt;&#x3D;0) 个数据元素的有限序列。 栈栈是只允许在一段进行操作的数据结构，我们可以把只在数组尾进行操作的数组视为一个栈。 栈可以分为 顺序栈、共享栈、链栈，接下来我们会谈论一下这三个栈，并用代码实现一下。 从存储结构来分，我们可以分为顺序存储和链式存储。顺序存储：顺序栈，共享栈；链式存储：链栈。 顺序栈：类似数组。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stack&amp;queue">
+<meta property="og:url" content="http://example.com/2020/11/08/stack-queue/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="栈与队列都是操作受限的线性表。 何为线性表呢？线性表是具有相同数据类型的 n(n&gt;&#x3D;0) 个数据元素的有限序列。 栈栈是只允许在一段进行操作的数据结构，我们可以把只在数组尾进行操作的数组视为一个栈。 栈可以分为 顺序栈、共享栈、链栈，接下来我们会谈论一下这三个栈，并用代码实现一下。 从存储结构来分，我们可以分为顺序存储和链式存储。顺序存储：顺序栈，共享栈；链式存储：链栈。 顺序栈：类似数组。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-08T15:18:44.000Z">
+<meta property="article:modified_time" content="2020-11-08T15:18:53.319Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-stack-queue" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/08/stack-queue/" class="article-date">
+  <time datetime="2020-11-08T15:18:44.000Z" itemprop="datePublished">2020-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      stack&amp;queue
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>栈与队列都是操作受限的线性表。</p>
+<p>何为线性表呢？线性表是具有相同数据类型的 n(n&gt;=0) 个数据元素的有限序列。</p>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈是只允许在一段进行操作的数据结构，我们可以把只在数组尾进行操作的数组视为一个栈。</p>
+<p>栈可以分为 <strong>顺序栈、共享栈、链栈</strong>，接下来我们会谈论一下这三个栈，并用代码实现一下。</p>
+<p>从存储结构来分，我们可以分为顺序存储和链式存储。顺序存储：顺序栈，共享栈；链式存储：链栈。</p>
+<p>顺序栈：类似数组。</p>
+<p>共享栈：两个栈共享同一块空间，其有两个指针，分别指向栈的两端。栈空就是 <em>top0 = -1, top1 = MaxSize</em>，栈满：<em>top0 + 1 = top1</em>。</p>
+<p>链栈：用单链表实现的栈，但是只能在链表头部进行操作，注意链栈是没有额外的头结点。</p>
+<p>另外，还有一个重要的 <strong>单调栈</strong>，在 LeetCode 刷题过程中，单调栈是一个很重要的应用。单调栈是一个单调递增或递减的栈，你可能会异或，栈进入的元素是随意的，你怎么保证里面的元素是有序的呢，其实可以另开一个栈来保存入栈时出栈的元素；或者入栈时，比新元素小的或大的元素都可以忽略，LeetCode就有应用到这种情况的单调栈。</p>
+<p>栈的应用主要有：栈在括号中的应用，栈在表达式求值中应用，递归，树的递归遍历。</p>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是可以在两端进行操作的数据结构，但是只能在队尾入队，队头出队。</p>
+<p>队列可以分为 <strong>一般队列、循环队列、链式队列、双端队列、优先队列</strong>。</p>
+<p>另外还有一个重要应用 <strong>单调队列</strong>，LeetCode 刷题也会用到此种数据结构。</p>
+<p>队列的应用主要有：树的层次遍历，图的广度优先遍历。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/08/stack-queue/" data-id="ckh99k1x70001y0qvad7a0r33" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/08/stack-queue/">stack&amp;queue</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/08/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
