@@ -20,21 +20,20 @@
     var CONFIG = {"hostname":"zhengpj.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="栈与队列都是操作受限的线性表。 何为线性表呢？线性表是具有相同数据类型的 n(n&gt;&#x3D;0) 个数据元素的有限序列。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="stack&amp;queue">
-<meta property="og:url" content="http://zhengpj.gitee.io/2020/11/08/stack-queue/index.html">
+  <meta name="description" content="一枚前端，努力成长，望有所作为。 &#x3D;&#x3D;&#x3D;继续补充&#x3D;&#x3D;&#x3D;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://zhengpj.gitee.io/about/index.html">
 <meta property="og:site_name" content="zhengpj&#39;s blog">
-<meta property="og:description" content="栈与队列都是操作受限的线性表。 何为线性表呢？线性表是具有相同数据类型的 n(n&gt;&#x3D;0) 个数据元素的有限序列。">
+<meta property="og:description" content="一枚前端，努力成长，望有所作为。 &#x3D;&#x3D;&#x3D;继续补充&#x3D;&#x3D;&#x3D;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-08T15:18:44.000Z">
-<meta property="article:modified_time" content="2020-11-20T14:49:02.159Z">
+<meta property="article:published_time" content="2020-11-20T10:38:09.000Z">
+<meta property="article:modified_time" content="2020-11-20T14:49:02.161Z">
 <meta property="article:author" content="zhengpj">
-<meta property="article:tag" content="stack">
-<meta property="article:tag" content="queue">
+<meta property="article:tag" content="前端, js, nodejs, egret, 随想">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://zhengpj.gitee.io/2020/11/08/stack-queue/">
+<link rel="canonical" href="http://zhengpj.gitee.io/about/">
 
 
 <script id="page-configurations">
@@ -42,12 +41,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'en'
   };
 </script>
 
-  <title>stack&queue | zhengpj's blog</title>
+  <title>about | zhengpj's blog
+</title>
   
 
 
@@ -162,125 +162,45 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content post posts-expand">
+          <div class="content page posts-expand">
             
 
     
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://zhengpj.gitee.io/2020/11/08/stack-queue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/assets/images/avatar.jpg">
-      <meta itemprop="name" content="zhengpj">
-      <meta itemprop="description" content="游戏开发，热爱JavaScript, nodejs">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhengpj's blog">
-    </span>
+    
+    
+    <div class="post-block" lang="en">
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          stack&queue
-        </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+<h1 class="post-title" itemprop="name headline">about
+</h1>
 
-              <time title="Created: 2020-11-08 23:18:44" itemprop="dateCreated datePublished" datetime="2020-11-08T23:18:44+08:00">2020-11-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-20 22:49:02" itemprop="dateModified" datetime="2020-11-20T22:49:02+08:00">2020-11-20</time>
-              </span>
+<div class="post-meta">
+  
 
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p>栈与队列都是操作受限的线性表。</p>
-<p>何为线性表呢？线性表是具有相同数据类型的 n(n&gt;=0) 个数据元素的有限序列。</p>
- <a id="more"></a>
-
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈是只允许在一段进行操作的数据结构，我们可以把只在数组尾进行操作的数组视为一个栈。</p>
-<p>栈可以分为 <strong>顺序栈、共享栈、链栈</strong>，接下来我们会谈论一下这三个栈，并用代码实现一下。</p>
-<p>从存储结构来分，我们可以分为顺序存储和链式存储。顺序存储：顺序栈，共享栈；链式存储：链栈。</p>
-<p>顺序栈：类似数组。</p>
-<p>共享栈：两个栈共享同一块空间，其有两个指针，分别指向栈的两端。栈空就是 <em>top0 = -1, top1 = MaxSize</em>，栈满：<em>top0 + 1 = top1</em>。</p>
-<p>链栈：用单链表实现的栈，但是只能在链表头部进行操作，注意链栈是没有额外的头结点。</p>
-<p>另外，还有一个重要的 <a href="/2020/11/16/monotonousStack/" title="单调栈">单调栈</a>，在 LeetCode 刷题过程中，单调栈是一个很重要的应用。单调栈是一个单调递增或递减的栈，你可能会疑惑，栈进入的元素是随意的，你怎么保证里面的元素是有序的呢，其实可以另开一个栈来保存入栈时出栈的元素；或者入栈时，比新元素小的或大的元素都可以忽略，LeetCode就有应用到这种情况的单调栈。</p>
-<p>栈的应用主要有：栈在括号中的应用，栈在表达式求值中应用，递归，树的递归遍历。</p>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是可以在两端进行操作的数据结构，但是只能在队尾入队，队头出队。</p>
-<p>队列可以分为 <strong>一般队列、循环队列、链式队列、双端队列、优先队列</strong>。</p>
-<p>另外还有一个重要应用 <strong>单调队列</strong>，LeetCode 刷题也会用到此种数据结构。</p>
-<p>队列的应用主要有：树的层次遍历，图的广度优先遍历。</p>
-
-    </div>
-
-    
-    
-    
-        
-
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>Post author:  </strong>zhengpj
-  </li>
-  <li class="post-copyright-link">
-    <strong>Post link: </strong>
-    <a href="http://zhengpj.gitee.io/2020/11/08/stack-queue/" title="stack&amp;queue">http://zhengpj.gitee.io/2020/11/08/stack-queue/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
 </div>
 
+</header>
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/stack/" rel="tag"># stack</a>
-              <a href="/tags/queue/" rel="tag"># queue</a>
-          </div>
+      
+      
+      
+      <div class="post-body">
+          <p>一枚前端，努力成长，望有所作为。</p>
+<p>===继续补充===</p>
 
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/11/08/hexo%E5%BB%BA%E7%AB%99/" rel="prev" title="Hexo建站">
-      <i class="fa fa-chevron-left"></i> Hexo建站
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/11/16/monotonousStack/" rel="next" title="monotonousStack">
-      monotonousStack <i class="fa fa-chevron-right"></i>
-    </a></div>
+      </div>
+      
+      
+      
     </div>
-      </footer>
     
-  </article>
-  
-  
-  
 
+    
+    
+    
 
 
           </div>
@@ -331,7 +251,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88"><span class="nav-number">1.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text">队列</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

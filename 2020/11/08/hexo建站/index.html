@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"zhengpj.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="栈与队列都是操作受限的线性表。 何为线性表呢？线性表是具有相同数据类型的 n(n&gt;&#x3D;0) 个数据元素的有限序列。">
+  <meta name="description" content="鉴于 GitHub Page 的不稳定和龟速，开始使用国内的 Gitee Page 来搭建个人博客。Gitee 是国内的一家开源代码托管平台，前不久 Gitee 也获得了工信部的支持，个人觉得 Gitee 还是不错的。 本文是基于 Gitee 和 Hexo 来搭建一个个人博客，网上有很多详细教程，这里主要记录一下搭建的流程以及后续问题，希望对你有帮助。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="stack&amp;queue">
-<meta property="og:url" content="http://zhengpj.gitee.io/2020/11/08/stack-queue/index.html">
+<meta property="og:title" content="Hexo建站">
+<meta property="og:url" content="http://zhengpj.gitee.io/2020/11/08/hexo%E5%BB%BA%E7%AB%99/index.html">
 <meta property="og:site_name" content="zhengpj&#39;s blog">
-<meta property="og:description" content="栈与队列都是操作受限的线性表。 何为线性表呢？线性表是具有相同数据类型的 n(n&gt;&#x3D;0) 个数据元素的有限序列。">
+<meta property="og:description" content="鉴于 GitHub Page 的不稳定和龟速，开始使用国内的 Gitee Page 来搭建个人博客。Gitee 是国内的一家开源代码托管平台，前不久 Gitee 也获得了工信部的支持，个人觉得 Gitee 还是不错的。 本文是基于 Gitee 和 Hexo 来搭建一个个人博客，网上有很多详细教程，这里主要记录一下搭建的流程以及后续问题，希望对你有帮助。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-08T15:18:44.000Z">
-<meta property="article:modified_time" content="2020-11-20T14:49:02.159Z">
+<meta property="article:published_time" content="2020-11-08T15:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-20T14:49:02.157Z">
 <meta property="article:author" content="zhengpj">
-<meta property="article:tag" content="stack">
-<meta property="article:tag" content="queue">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="建站">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://zhengpj.gitee.io/2020/11/08/stack-queue/">
+<link rel="canonical" href="http://zhengpj.gitee.io/2020/11/08/hexo%E5%BB%BA%E7%AB%99/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>stack&queue | zhengpj's blog</title>
+  <title>Hexo建站 | zhengpj's blog</title>
   
 
 
@@ -170,7 +170,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://zhengpj.gitee.io/2020/11/08/stack-queue/">
+    <link itemprop="mainEntityOfPage" href="http://zhengpj.gitee.io/2020/11/08/hexo%E5%BB%BA%E7%AB%99/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/assets/images/avatar.jpg">
@@ -183,7 +183,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          stack&queue
+          Hexo建站
         </h1>
 
         <div class="post-meta">
@@ -193,7 +193,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-11-08 23:18:44" itemprop="dateCreated datePublished" datetime="2020-11-08T23:18:44+08:00">2020-11-08</time>
+              <time title="Created: 2020-11-08 23:00:00" itemprop="dateCreated datePublished" datetime="2020-11-08T23:00:00+08:00">2020-11-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -214,22 +214,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>栈与队列都是操作受限的线性表。</p>
-<p>何为线性表呢？线性表是具有相同数据类型的 n(n&gt;=0) 个数据元素的有限序列。</p>
+        <p>鉴于 GitHub Page 的不稳定和龟速，开始使用国内的 Gitee Page 来搭建个人博客。Gitee 是国内的一家开源代码托管平台，前不久 Gitee 也获得了工信部的支持，个人觉得 Gitee 还是不错的。</p>
+<p>本文是基于 Gitee 和 Hexo 来搭建一个个人博客，网上有很多详细教程，这里主要记录一下搭建的流程以及后续问题，希望对你有帮助。</p>
  <a id="more"></a>
 
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈是只允许在一段进行操作的数据结构，我们可以把只在数组尾进行操作的数组视为一个栈。</p>
-<p>栈可以分为 <strong>顺序栈、共享栈、链栈</strong>，接下来我们会谈论一下这三个栈，并用代码实现一下。</p>
-<p>从存储结构来分，我们可以分为顺序存储和链式存储。顺序存储：顺序栈，共享栈；链式存储：链栈。</p>
-<p>顺序栈：类似数组。</p>
-<p>共享栈：两个栈共享同一块空间，其有两个指针，分别指向栈的两端。栈空就是 <em>top0 = -1, top1 = MaxSize</em>，栈满：<em>top0 + 1 = top1</em>。</p>
-<p>链栈：用单链表实现的栈，但是只能在链表头部进行操作，注意链栈是没有额外的头结点。</p>
-<p>另外，还有一个重要的 <a href="/2020/11/16/monotonousStack/" title="单调栈">单调栈</a>，在 LeetCode 刷题过程中，单调栈是一个很重要的应用。单调栈是一个单调递增或递减的栈，你可能会疑惑，栈进入的元素是随意的，你怎么保证里面的元素是有序的呢，其实可以另开一个栈来保存入栈时出栈的元素；或者入栈时，比新元素小的或大的元素都可以忽略，LeetCode就有应用到这种情况的单调栈。</p>
-<p>栈的应用主要有：栈在括号中的应用，栈在表达式求值中应用，递归，树的递归遍历。</p>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是可以在两端进行操作的数据结构，但是只能在队尾入队，队头出队。</p>
-<p>队列可以分为 <strong>一般队列、循环队列、链式队列、双端队列、优先队列</strong>。</p>
-<p>另外还有一个重要应用 <strong>单调队列</strong>，LeetCode 刷题也会用到此种数据结构。</p>
-<p>队列的应用主要有：树的层次遍历，图的广度优先遍历。</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>下载安装即可，简单方便。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Nodejs</a></li>
+<li><a target="_blank" rel="noopener" href="https://git-scm.com/downloads">git</a></li>
+</ul>
+<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>首先，需要安装 hexo 的脚手架工作。使用 <strong>npm</strong> 命令，安装了 nodejs 后，npm 对应的也会安装的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g <span class="comment"># -g 表示全局安装的意思</span></span><br></pre></td></tr></table></figure>
+
+<p>然后，创建一个本地存放博客的hexo仓库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexoBlog</span><br><span class="line"><span class="built_in">cd</span> hexoBlog</span><br><span class="line">hexo init <span class="comment">#可能需要比较长的时间，才能初始化完成，耐心等待</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Hexo-基本操作"><a href="#Hexo-基本操作" class="headerlink" title="Hexo 基本操作"></a>Hexo 基本操作</h2><h3 id="新建博客文章"><a href="#新建博客文章" class="headerlink" title="新建博客文章"></a>新建博客文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span> <span class="comment"># hexo n &quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="发布静态文件"><a href="#发布静态文件" class="headerlink" title="发布静态文件"></a>发布静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate <span class="comment"># hexo g</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="开启服务器"><a href="#开启服务器" class="headerlink" title="开启服务器"></a>开启服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server <span class="comment"># hexo s</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h2 id="推送到Gitee-Page"><a href="#推送到Gitee-Page" class="headerlink" title="推送到Gitee Page"></a>推送到Gitee Page</h2><p>首先需要在 gitee 上创建一个仓库，注意这个仓库名需要和你gitee账号名一致。</p>
+<p>比如你的账号名是 <code>zhangsan</code>，则你创建的仓库名需为 <code>zhangsan</code>。</p>
+<p>第二步，修改 <em>_config.yml</em> 文件的 <em>deploy</em> 参数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://gitee.com/zhangsan/zhangsan.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>第三步，推送到 Gitee 仓库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy <span class="comment"># hexo d</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>第四步，在Gitee的zhangsan仓库下，进入 service 下的 Gitee Pages，点击update按钮，等一会，网站就部署完成了，<code>http://zhangsan.gitee.io</code> 就是个人博客网址了。</p>
+<h2 id="特殊事项"><a href="#特殊事项" class="headerlink" title="特殊事项"></a>特殊事项</h2><h3 id="博客首页只显示文章部分内容或摘要"><a href="#博客首页只显示文章部分内容或摘要" class="headerlink" title="博客首页只显示文章部分内容或摘要"></a>博客首页只显示文章部分内容或摘要</h3><p>博客首页的文章显示部分内容，只有点击进入文章才可查看全部内容。</p>
+<p>只需要在对应的文章中，在需要显示的部分和隐藏的部分之间加上一句即可：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="站内文章引用"><a href="#站内文章引用" class="headerlink" title="站内文章引用"></a>站内文章引用</h3><p>使用 <em>post_link</em> 进行链接。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!-- 链接使用文章的标题 --&gt;</span></span></span><br><span class="line">&#123;% post<span class="emphasis">_link 标题 %&#125;</span></span><br><span class="line"><span class="emphasis"><span class="xml"><span class="comment">&lt;!-- 链接使用自定义文字 --&gt;</span></span></span></span><br><span class="line"><span class="emphasis">&#123;% post_</span>link 标题 &#x27;自定义文字&#x27; %&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -245,7 +269,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="http://zhengpj.gitee.io/2020/11/08/stack-queue/" title="stack&amp;queue">http://zhengpj.gitee.io/2020/11/08/stack-queue/</a>
+    <a href="http://zhengpj.gitee.io/2020/11/08/hexo%E5%BB%BA%E7%AB%99/" title="Hexo建站">http://zhengpj.gitee.io/2020/11/08/hexo建站/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -256,8 +280,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/stack/" rel="tag"># stack</a>
-              <a href="/tags/queue/" rel="tag"># queue</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag"># 建站</a>
           </div>
 
         
@@ -265,13 +289,10 @@
 
         
     <div class="post-nav">
+      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/11/08/hexo%E5%BB%BA%E7%AB%99/" rel="prev" title="Hexo建站">
-      <i class="fa fa-chevron-left"></i> Hexo建站
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/11/16/monotonousStack/" rel="next" title="monotonousStack">
-      monotonousStack <i class="fa fa-chevron-right"></i>
+    <a href="/2020/11/08/stack-queue/" rel="next" title="stack&queue">
+      stack&queue <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -331,7 +352,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88"><span class="nav-number">1.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text">队列</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Hexo"><span class="nav-number">2.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">Hexo 基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><span class="nav-number">3.1.</span> <span class="nav-text">新建博客文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="nav-number">3.2.</span> <span class="nav-text">发布静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">3.3.</span> <span class="nav-text">开启服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E5%88%B0Gitee-Page"><span class="nav-number">4.</span> <span class="nav-text">推送到Gitee Page</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E4%BA%8B%E9%A1%B9"><span class="nav-number">5.</span> <span class="nav-text">特殊事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E9%A6%96%E9%A1%B5%E5%8F%AA%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9%E6%88%96%E6%91%98%E8%A6%81"><span class="nav-number">5.1.</span> <span class="nav-text">博客首页只显示文章部分内容或摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%99%E5%86%85%E6%96%87%E7%AB%A0%E5%BC%95%E7%94%A8"><span class="nav-number">5.2.</span> <span class="nav-text">站内文章引用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
