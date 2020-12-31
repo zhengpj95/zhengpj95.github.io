@@ -20,22 +20,21 @@
     var CONFIG = {"hostname":"zhengpj.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="栈与队列都是操作受限的线性表。 何为线性表呢？线性表是具有相同数据类型的 n(n&gt;&#x3D;0) 个数据元素的有限序列。">
+  <meta name="description" content="引用维基百科的定义：Floyd’s cycle-finding algorithm is a pointer algorithm that uses only two pointers, which move through the sequence at different speeds. It is also called the “tortoise and the hare algorith">
 <meta property="og:type" content="article">
-<meta property="og:title" content="stack&amp;queue">
-<meta property="og:url" content="http://zhengpj.gitee.io/2020/11/08/stack-queue/index.html">
+<meta property="og:title" content="Floyd&#39;s cycle-finding algorithm">
+<meta property="og:url" content="http://zhengpj.gitee.io/2020/11/25/Floyd-s-cycle-finding-algorithm/index.html">
 <meta property="og:site_name" content="浪荡&amp;不羁">
-<meta property="og:description" content="栈与队列都是操作受限的线性表。 何为线性表呢？线性表是具有相同数据类型的 n(n&gt;&#x3D;0) 个数据元素的有限序列。">
+<meta property="og:description" content="引用维基百科的定义：Floyd’s cycle-finding algorithm is a pointer algorithm that uses only two pointers, which move through the sequence at different speeds. It is also called the “tortoise and the hare algorith">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-08T15:18:44.000Z">
-<meta property="article:modified_time" content="2020-11-22T07:38:35.558Z">
+<meta property="article:published_time" content="2020-11-25T11:48:03.000Z">
+<meta property="article:modified_time" content="2020-11-25T14:52:39.294Z">
 <meta property="article:author" content="zhengpj">
-<meta property="article:tag" content="stack">
-<meta property="article:tag" content="queue">
-<meta property="article:tag" content="data structure">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://zhengpj.gitee.io/2020/11/08/stack-queue/">
+<link rel="canonical" href="http://zhengpj.gitee.io/2020/11/25/Floyd-s-cycle-finding-algorithm/">
 
 
 <script id="page-configurations">
@@ -48,7 +47,7 @@
   };
 </script>
 
-  <title>stack&queue | 浪荡&不羁</title>
+  <title>Floyd's cycle-finding algorithm | 浪荡&不羁</title>
   
 
 
@@ -171,7 +170,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://zhengpj.gitee.io/2020/11/08/stack-queue/">
+    <link itemprop="mainEntityOfPage" href="http://zhengpj.gitee.io/2020/11/25/Floyd-s-cycle-finding-algorithm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/assets/images/avatar.jpg">
@@ -184,7 +183,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          stack&queue
+          Floyd's cycle-finding algorithm
         </h1>
 
         <div class="post-meta">
@@ -193,23 +192,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-11-08 23:18:44" itemprop="dateCreated datePublished" datetime="2020-11-08T23:18:44+08:00">2020-11-08</time>
+              <time title="Created: 2020-11-25 19:48:03 / Modified: 22:52:39" itemprop="dateCreated datePublished" datetime="2020-11-25T19:48:03+08:00">2020-11-25</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-22 15:38:35" itemprop="dateModified" datetime="2020-11-22T15:38:35+08:00">2020-11-22</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Data-Structure/" itemprop="url" rel="index"><span itemprop="name">Data Structure</span></a>
+                  <a href="/categories/Clever-Algorithm/" itemprop="url" rel="index"><span itemprop="name">Clever Algorithm</span></a>
                 </span>
             </span>
 
@@ -224,22 +217,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>栈与队列都是操作受限的线性表。</p>
-<p>何为线性表呢？线性表是具有相同数据类型的 n(n&gt;=0) 个数据元素的有限序列。</p>
- <a id="more"></a>
+        <p>引用维基百科的定义：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare">Floyd’s cycle-finding algorithm</a> is a pointer algorithm that uses only two pointers, which move through the sequence at different speeds. It is also called the “tortoise and the hare algorithm”.</p>
+<p>此算法主要应用于链表中，主要是判断链表是否有环以及环的起始位置。</p>
+<a id="more"></a>
 
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈是只允许在一段进行操作的数据结构，我们可以把只在数组尾进行操作的数组视为一个栈。</p>
-<p>栈可以分为 <strong>顺序栈、共享栈、链栈</strong>，接下来我们会谈论一下这三个栈，并用代码实现一下。</p>
-<p>从存储结构来分，我们可以分为顺序存储和链式存储。顺序存储：顺序栈，共享栈；链式存储：链栈。</p>
-<p>顺序栈：类似数组。</p>
-<p>共享栈：两个栈共享同一块空间，其有两个指针，分别指向栈的两端。栈空就是 <em>top0 = -1, top1 = MaxSize</em>，栈满：<em>top0 + 1 = top1</em>。</p>
-<p>链栈：用单链表实现的栈，但是只能在链表头部进行操作，注意链栈是没有额外的头结点。</p>
-<p>另外，还有一个重要的 <a href="/2020/11/16/monotonousStack/" title="单调栈">单调栈</a>，在 LeetCode 刷题过程中，单调栈是一个很重要的应用。单调栈是一个单调递增或递减的栈，你可能会疑惑，栈进入的元素是随意的，你怎么保证里面的元素是有序的呢，其实可以另开一个栈来保存入栈时出栈的元素；或者入栈时，比新元素小的或大的元素都可以忽略，LeetCode就有应用到这种情况的单调栈。</p>
-<p>栈的应用主要有：栈在括号中的应用，栈在表达式求值中应用，递归，树的递归遍历。</p>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是可以在两端进行操作的数据结构，但是只能在队尾入队，队头出队。</p>
-<p>队列可以分为 <strong>一般队列、循环队列、链式队列、双端队列、优先队列</strong>。</p>
-<p>另外还有一个重要应用 <strong>单调队列</strong>，LeetCode 刷题也会用到此种数据结构。</p>
-<p>队列的应用主要有：树的层次遍历，图的广度优先遍历。</p>
+<p>这两个内容刚好对应于 LeetCode 的两道题，此随笔就以这两道题来讲解一下这个巧妙的算法。下面给出这两道题在 LeetCode 中的链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle/">141. 环形链表</a></li>
+<li><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">142. 环形链表 II</a></li>
+</ul>
+<p>下面的实例代码都用 JavaScript 实现。</p>
+<h2 id="判断链表是否有环"><a href="#判断链表是否有环" class="headerlink" title="判断链表是否有环"></a>判断链表是否有环</h2><p>此算法的主要思想就是双指针，<em>hare</em> 指针一次两步，<em>tortoise</em> 一次一步，如果链表有环，那么 <em>hare</em> 总会追上 <em>tortoise</em>。</p>
+<p><em>hare</em> 一次三步可以吗，应该是可以的，如果有环，它们总会相遇的。但是可能 <em>hare</em> 就要辛苦些， 绕环跑多几圈。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;ListNode&#125;</span> <span class="variable">head</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> hasCycle = <span class="function"><span class="keyword">function</span>(<span class="params">head</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!head) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> tortoise = head;</span><br><span class="line">  hare = head;</span><br><span class="line">  <span class="keyword">while</span> (hare &amp;&amp; hare.next) &#123;</span><br><span class="line">    hare = hare.next.next;</span><br><span class="line">    tortoise = tortoise.next;</span><br><span class="line">    <span class="keyword">if</span> (hare === tortoise) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="链表有环，判断链表环的起始位置"><a href="#链表有环，判断链表环的起始位置" class="headerlink" title="链表有环，判断链表环的起始位置"></a>链表有环，判断链表环的起始位置</h2><p>使用上面的算法，我们可以判断 <em>链表是否有环</em>。</p>
+<p>如果有环，<em>hare</em> 和 <em>tortoise</em> 总会相遇，假设 <em>tortoise</em> 跑了 <code>k</code> 步，那么 <em>hare</em> 就跑了 <code>2k</code> 步，因为 hare 的速度是 tortoise 的两倍。</p>
+<p>那么环的长度就是 <code>k</code>。</p>
+<p>此时我们再假设 <em>相遇点</em> 到 <em>环的起点</em> 为 <code>m</code>，那么链表的起点到环的起点就是 <code>k - m</code> 的长度，相遇点再继续前进 <code>k - m</code> 步也会到环的起点，因为环的长度就是 <code>k</code> 嘛。</p>
+<p>那么我们可以让 tortoise 和 hare，一个重回到链表的起点，一个从当前相遇点开始同步前进，一次一步。那么走了 <code>k - m</code> 步后它们就会相遇。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里让 tortoise 回到起点</span></span><br><span class="line"><span class="keyword">while</span> (hare != tortoise) &#123;</span><br><span class="line">  hare = hare.next;</span><br><span class="line">  tortoise = tortoise.next;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> hare;</span><br></pre></td></tr></table></figure>
+
+<p>完整的代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;ListNode&#125;</span> <span class="variable">head</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;ListNode&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> detectCycle = <span class="function"><span class="keyword">function</span>(<span class="params">head</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!head) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">let</span> hare = head;</span><br><span class="line">  <span class="keyword">let</span> tortoise = head;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//找到相遇点</span></span><br><span class="line">  <span class="keyword">while</span> (hare &amp;&amp; hare.next) &#123;</span><br><span class="line">    hare = hare.next.next;</span><br><span class="line">    tortoise = tortoise.next;</span><br><span class="line">    <span class="keyword">if</span> (hare === tortoise) <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 没有相遇点，也就是没有环，直接返回即可</span></span><br><span class="line">  <span class="comment">// 无环情况下，且结点数为奇数个时，hare指向最后一个结点</span></span><br><span class="line">  <span class="keyword">if</span> (hare != tortoise) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//让tortoise指针回到开头，两指针重新同步前进，它们就会在环的起点相遇</span></span><br><span class="line">  tortoise = head;</span><br><span class="line">  <span class="keyword">while</span> (tortoise !== hare) &#123;</span><br><span class="line">    hare = hare.next;</span><br><span class="line">    tortoise = tortoise.next;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> hare;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>Floyd’s cycle-finding algorithm</strong> 既是 <strong>tortoise and the hare algorithm</strong>，也是 <strong>双指针的快慢指针法</strong>。</p>
+<p>此算法主要应用在链表的 <strong>判断链表是否有环</strong> 以及 <strong>如果链表有环，找出环的起始位置</strong>。</p>
 
     </div>
 
@@ -255,7 +258,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="http://zhengpj.gitee.io/2020/11/08/stack-queue/" title="stack&amp;queue">http://zhengpj.gitee.io/2020/11/08/stack-queue/</a>
+    <a href="http://zhengpj.gitee.io/2020/11/25/Floyd-s-cycle-finding-algorithm/" title="Floyd&#39;s cycle-finding algorithm">http://zhengpj.gitee.io/2020/11/25/Floyd-s-cycle-finding-algorithm/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -267,9 +270,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/stack/" rel="tag"><i class="fa fa-tag"></i> stack</a>
-              <a href="/tags/queue/" rel="tag"><i class="fa fa-tag"></i> queue</a>
-              <a href="/tags/data-structure/" rel="tag"><i class="fa fa-tag"></i> data structure</a>
+              <a href="/tags/leetcode/" rel="tag"><i class="fa fa-tag"></i> leetcode</a>
+              <a href="/tags/algorithm/" rel="tag"><i class="fa fa-tag"></i> algorithm</a>
           </div>
 
         
@@ -278,12 +280,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/11/08/%E5%9F%BA%E4%BA%8EGitee%E5%92%8CHexo%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="prev" title="基于 Gitee 和 Hexo 建立个人博客">
-      <i class="fa fa-chevron-left"></i> 基于 Gitee 和 Hexo 建立个人博客
+    <a href="/2020/11/24/Boyer-Moore-Voting-Algorithm/" rel="prev" title="Boyer-Moore Voting Algorithm">
+      <i class="fa fa-chevron-left"></i> Boyer-Moore Voting Algorithm
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/11/16/monotonousStack/" rel="next" title="monotonousStack">
-      monotonousStack <i class="fa fa-chevron-right"></i>
+    <a href="/2020/11/26/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4-%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95/" rel="next" title="算法思维-双指针法">
+      算法思维-双指针法 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -343,7 +345,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88"><span class="nav-number">1.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text">队列</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E6%9C%89%E7%8E%AF"><span class="nav-number">1.</span> <span class="nav-text">判断链表是否有环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E6%9C%89%E7%8E%AF%EF%BC%8C%E5%88%A4%E6%96%AD%E9%93%BE%E8%A1%A8%E7%8E%AF%E7%9A%84%E8%B5%B7%E5%A7%8B%E4%BD%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">链表有环，判断链表环的起始位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
